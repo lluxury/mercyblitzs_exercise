@@ -13,8 +13,8 @@
       // Eureka
         // sc 背书
         // ap
-        // 简单易用
-        // 内存限制
+        // 简单易用,有控制台,2.0闭源
+        // 内存限制 3w
         // 单一调度更新
         // 伸缩限制
 // 广播限制规模
@@ -23,13 +23,13 @@
         // 成熟方案
 // cp 强一致性
         // 维护成本
-        // 伸缩限制
+        // 伸缩限制 2w
 // 内存型限制,
  
       // consul
         // 通用方案
         // ap模型
-        // 未大规模验证 5000?
+        // 未大规模验证 5k
         // go语言障碍
 // Spring Cloud Consul
 
@@ -58,10 +58,54 @@ https://start.spring.io/
 // 刷新,确认信息,信息链接
 // 同样保持打开状态
 
+
+// 再回到构建页面
+// zookeeper-client-demo, 依赖选择 zoo discover
+// 在命令行启动zk
+C:\Users\yann\zookeeper-3.4.13\bin\zkServer.cmd
+
+// 确认 zk discovery 版本 视屏 3.5.3?
+// 干掉默认代码,使用网页上3.4代码,位置在上文网页 zookeeper部分
+
+// 增加注解, 引入web 依赖 
+
+// 检测状态
+C:\Users\yann\zookeeper-3.4.13\bin\zkCli.cmd
+ls
+dir
+ls /services/
+
+get /services/zookeeper-client/xx
+// 获取节点信息
+
     // Nacos Discovery
+
+
+org.springframework.cloud
+application.properties
+@EableDiscoveryClient
+// 下载,启动,依赖,配置,激活,注册
+// 待补完
+
+// 下载
+https://github.com/alibaba/nacos/releases
+0.2.1
+
+// 启动
+sh startup -m standalone
+
+https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-discovery-example/readme.md
+http://127.0.0.1:8848/nacos/v1/ns/instances?serviceName=service-provider
+
+// 加参数
+set "JAVA_OPT=%JAVA_OPT% --server.port=8848"
+
+nacos-cloud-alibaba-nacos-discovery  nacos-example
+
+server.port = 18082
+spring.application.name=service-provider
+spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+management.endpoints.web.exposure.include=*
+?
     // Nacos 生态
  
-    // 代码
-      // eureka-client-demo/
-      // eureka-server-demo/
-      // zookeeper-client-demo/
