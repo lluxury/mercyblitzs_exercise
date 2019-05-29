@@ -1,0 +1,41 @@
+// 2018.09.21  Spring Cloud 服务发现新选择 - Alibaba Nacos Discovery      
+// 2018.09.28  Spring Cloud 分布式配置新选择 - Alibaba Nacos Config   
+// 2018.10.05  超越外部化配置 - Nacos Spring Stack   
+// 2018.10.12  Spring Cloud 服务熔断新选择 - Alibaba Sentinel     
+// 2018.10.19  新一代轻量级流控框架 - Alibaba Sentinel  
+// 2018.11.01  总览 Spring Cloud Alibaba 0.2.0.RELEASE   
+// 2018.11.05  SpringOne Tour 北京技术峰会见闻与思考      
+// 2018.11.16  Spring Cloud Stream Binder Alibaba 实现   
+// 2018.11.23  Spring Cloud Bus Alibaba 实现     
+// 2018.11.30  Spring Cloud Alibaba RPC 实现前哨站 - Apache Dubbo   
+// 2018.12.07  Apache Dubbo 微服务系列之遇见 Nacos：服务治理新鲜货    
+// 2018.12.14  Apache Dubbo 微服务系列之运维平台：Dubbo OPS      
+// 2018.12.21  Apache Dubbo 微服务系列之 Dubbo 诊断工具Arthas   
+// 2018.12.28  Apache Dubbo 微服务系列之 Dubbo 服务熔断     
+// 2019.01.04  Apache Dubbo 微服务系列之 Dubbo 与 Spring Cloud 整合    
+// 2019.01.11  Apache Dubbo 微服务系列之 Dubbo Spring Cloud 实现     
+// 2019.01.18  Apache Dubbo 微服务系列之 Dubbo Spring Cloud 实现   
+// 2019.01.25  Apache Dubbo 微服务系列之 Dubbo Spring Cloud 实现总结    
+// 2019.02.22  Apache Dubbo 微服务系列之Spring Cloud设计与实现      
+// 2019.03.01  Apache Dubbo 微服务系列之分布式事务 Fescar   
+// 2019.03.15  Apache Dubbo 微服务系列之网关整合      
+// 2019.03.29  Apache Dubbo 微服务系列之 ALL IN ONE   
+// 2019.04.12  面试虐我千百遍，Java 并发真讨厌（续） 
+
+// java-concurrency/src/com/imooc/interview/questions/java/concurrency   
+
+
+
+// 09-21  Alibaba Nacos Discovery
+  // 服务发现现状
+    // sc 架构
+    // 服务发现
+
+    // Eureka
+    // zookeeper
+    // consul
+
+    // 基本流程
+
+  // Nacos Discovery
+  // Nacos 生态

@@ -1,0 +1,53 @@
+
+    // 服务发现现状
+      // sc 架构
+        // feign
+        // sc Stream
+// 待补完
+ 
+      // 服务发现
+        // Netflix Eureka
+        // Zookeeper
+        // Consul go
+ 
+      // Eureka
+        // sc 背书
+        // ap
+        // 简单易用
+        // 内存限制
+        // 单一调度更新
+        // 伸缩限制
+// 广播限制规模
+
+      // zookeeper
+        // 成熟方案
+// cp 强一致性
+        // 维护成本
+        // 伸缩限制
+// 内存型限制,
+ 
+      // consul
+        // 通用方案
+        // ap模型
+        // 未大规模验证 5000?
+        // go语言障碍
+// Spring Cloud Consul
+
+      // 基本流程
+        // 启动注册中心
+        // 增加客户端依赖
+        // 注册客户端
+ 
+// 部署eureka
+https://start.spring.io/
+// 基本设置默认, 设置一下Group和Artifact
+// Spring Boot 只有2.1.5选了, 比视频里的2.0.5要高
+// 依赖选 Eureka Server
+
+    // Nacos Discovery
+    // Nacos 生态
+ 
+    // 代码
+      // eureka-client-demo/
+      // eureka-server-demo/
+      // zookeeper-client-demo/
