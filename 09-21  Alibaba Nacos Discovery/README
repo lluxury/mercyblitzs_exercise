@@ -50,6 +50,13 @@ https://start.spring.io/
 // 配置 注解和服务器端口,启动服务,页面查看,保持启动
 
 
+// 同上 eureka-client-demo, Eureka Discovery
+
+// https://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html
+
+// 配置客户端后,运行,应用报错, 没有阻塞程序, pom增加web依赖
+// 刷新,确认信息,信息链接
+// 同样保持打开状态
 
     // Nacos Discovery
     // Nacos 生态
