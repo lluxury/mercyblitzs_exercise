@@ -3,7 +3,8 @@ package demo.eurekaserverdemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplicationl
+// @EnableEurekaServer
 public class EurekaServerDemoApplication {
 
 	public static void main(String[] args) {

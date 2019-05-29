@@ -39,10 +39,17 @@
         // 注册客户端
  
 // 部署eureka
+
 https://start.spring.io/
 // 基本设置默认, 设置一下Group和Artifact
 // Spring Boot 只有2.1.5选了, 比视频里的2.0.5要高
 // 依赖选 Eureka Server
+
+// 因为闭源,F版本还用的1.9.3 Eureka
+
+// 配置 注解和服务器端口,启动服务,页面查看,保持启动
+
+
 
     // Nacos Discovery
     // Nacos 生态
