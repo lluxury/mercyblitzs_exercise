@@ -55,7 +55,16 @@ https://start.spring.io/
 // https://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html
 
 // 配置客户端后,运行,应用报错, 没有阻塞程序, pom增加web依赖
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
 // 刷新,确认信息,信息链接
+
+http://localhost:12345/
+// Instances currently registered with Eureka
+
 // 同样保持打开状态
 
 
@@ -64,19 +73,26 @@ https://start.spring.io/
 // 在命令行启动zk
 C:\Users\yann\zookeeper-3.4.13\bin\zkServer.cmd
 
-// 确认 zk discovery 版本 视屏 3.5.3?
+// 确认 zk discovery 版本 3.5.3 不兼容
+
+// view - view tools - maven project  打开视图
+
 // 干掉默认代码,使用网页上3.4代码,位置在上文网页 zookeeper部分
 
-// 增加注解, 引入web 依赖 
+// 增加注解, 引入web 依赖,上文 
 
 // 检测状态
 C:\Users\yann\zookeeper-3.4.13\bin\zkCli.cmd
 ls
 dir
-ls /services/
+ls /services/zookeeper-client
+// [ead1658d-3526-4b67-b7bf-839588684d09]
+// 实例id
 
-get /services/zookeeper-client/xx
-// 获取节点信息
+get /services/zookeeper-client/ead1658d-3526-4b67-b7bf-839588684d09
+get /services/zookeeper-client/0f76c71c-810a-498c-87e5-6d6f2e29443b
+
+// 获取节点信息,重启后抓新的实例id
 
     // Nacos Discovery
 
