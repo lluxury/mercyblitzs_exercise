@@ -104,24 +104,178 @@ application.properties
 // 待补完
 
 // 下载
-https://github.com/alibaba/nacos/releases
-0.2.1
+https://github.com/alibaba/nacos/releases/download/1.0.0/nacos-server-1.0.0.zip
 
 // 启动
 sh startup -m standalone
+.\startup.cmd   // 8848
+
+http://localhost:8848/
 
 https://github.com/spring-cloud-incubator/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-discovery-example/readme.md
+
 http://127.0.0.1:8848/nacos/v1/ns/instances?serviceName=service-provider
+// 1.0不可用
+
+// http://localhost:8848/nacos/#/login
+// nacos nacos
 
 // 加参数
-set "JAVA_OPT=%JAVA_OPT% --server.port=8848"
+// set "JAVA_OPT=%JAVA_OPT% --server.port=8848"
 
-nacos-cloud-alibaba-nacos-discovery  nacos-example
 
-server.port = 18082
+// nacos-cloud-alibaba-nacos-discovery  nacos-example
+
+// C:/cygwin64/home/yann/coding/java/mercyblitzs_exercise/09-21  Alibaba Nacos Discovery/spring-cloud-alibaba
+
+
+// 启动nacos-discovery-provider-example项目
+
+// 配置
+server.port=18082
 spring.application.name=service-provider
 spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+management.endpoints.web.exposure.include=*         // 可以展示的端口
+// 默认带的配置
+
+http://localhost:8848/nacos/#/serviceDetail?name=spring-cloud-alibaba-dubbo-provider&groupName=DEFAULT_GROUP
+
+
+// 注意不要使用cmd下的git,会产生奇怪的问题,比如xml无效
+
+http://localhost:18082/echo/hello,yann
+// hello Nacos Discovery hello,yann
+
+http://localhost:18082/actuator/health
+// {"status":"UP"}
+
+http://localhost:18082/actuator/metrics
+// JSON输出
+
+http://localhost:18082/actuator/mappings
+// JSON格式 URL映射
+
+
+// 启动 nacos-discovery-consumer-example 项目
+
+// 依赖
+// spring-cloud-starter-alibaba-nacos-discovery
+
+// 配置
+spring.application.name=service-consumer
+server.port=18083
 management.endpoints.web.exposure.include=*
-?
+spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+
+    @LoadBalanced
+// 负载均衡
+// 客户端负载 Ribbon,需要注册中心,获取ip列表
+
+// 两种连接服务端方式
+    // RestTemplate
+@LoadBalanced RestTemplate URI
+public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+// 实现也不同
+            return restTemplate.getForObject("http://service-provider/echo/" + str,
+                String.class);
+
+    // Feign
+@FeignClient(name = "service-provider")
+    public interface EchoService {
+        @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
+        String echo(@PathVariable("str") String str);
+
+// 面向接口,直接调用
+public String feign(@PathVariable String str) {
+        return echoService.echo(str);
+    }
+
+
+http://localhost:18083/services
+// 获取到注册的服务端,消费端
+
+http://localhost:18083/actuator/nacos-discovery
+
+// https://nacos.io/en-us/docs/open-API.html
+
+http://localhost:8848/nacos/v1/ns/instance/list?serviceName=service-consumer
+http://localhost:8848/nacos/v1/ns/instance/list?serviceName=service-provider
+// nacos服务器有两个应用,一个实例? services 
+
+// 和视频上的网址略有不同
+
+// 自己写一个测试方法
+    @GetMapping(value = "/service/instances/{serviceName}")
+    public List<String> serviceInstances(@PathVariable String serviceName){
+        return discoveryClient.getInstances(serviceName)
+                .stream()
+                .map(instance -> instance.getHost() + ":" + instance.getPort() )
+                .collect(Collectors.toList());
+    }
+// 流 + 转换 + ServiceInstance -> ${host}:${port} 字符串,这点不是很熟悉
+
+http://localhost:18083/service/instances/service-consumer
+// ["10.10.13.6:18083"] 多ip 不可控, 服务端,客户端都可以取到信息  
+
+
+JConsole 
+
     // Nacos 生态
  
+    // 抽象原理 Commons
+      // 激活注册
+        // @EnableDiscoveryClient
+
+
+// 微服务基于http来做的
+instanceId
+    // zk 
+    0f76c71c-810a-498c-87e5-6d6f2e29443b
+
+    // Eureka
+    10.10.6.13:eureka-client:8081
+
+    // nacos
+    10.10.13.6#18082#DEFAULT#DEFAULT_GROUP@@service-provider
+
+isSecure
+// 是否https
+
+Metadata 
+// 元信息
+// String,String 格式,频繁序列化,反序列化 性能上有些浪费,开销大
+
+spring-cloud-commons-2.1.1.RELEASE.jar 下,各种实现
+
+      // 服务注册
+        // ServiceRegistry 
+          // 注册中心
+        // Registration
+          // ServiceInstance的超类
+namingService.registerInstance(serviceId, instance);  
+// 注册信息放nacos,持久化可以连db  
+
+      // 负载均衡
+        // RibbonServer
+        // ServerList
+      // Actuator
+        // HealthIndicator
+        // @Endpoint
+
+
+
+// 差3个github地址,后补
+
+// 小马哥的博客
+https://mercyblitz.github.io/
+
+
+
+
+
+
+
+
+
