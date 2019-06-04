@@ -1,0 +1,28 @@
+
+    // sc现状
+// 多台 配置服务器,负载均衡
+// 走Ribbon,负载
+// 走HTTP直连 ip + 端口
+
+      // git
+// 版本化配置
+
+      // zoopeeper
+      // sc consul
+      // JDBC E版
+    // sc Context抽象
+      // EnvironmentManager
+      // Bean 动态
+      // 应用上下文
+      // Boot Actuator
+      // Cloud 事件
+    // Nacos Config
+      // 下载
+      // 启动
+      // 增加依赖
+      // 外部配置
+      // 应用名称
+      // 发布
+    // 代码
+      // config-client-demo/
+      // config-server-demo/
