@@ -8,10 +8,25 @@
 // 版本化配置
 
       // zoopeeper
+// 信息存在zk里面
+// Dubbo, Spring Cloud
+
       // sc consul
+// Spring Cloud consul
+// Service Mesh
+
+// Raft + Gossip ?
+
       // JDBC E版
+// 不推荐
+
     // sc Context抽象
       // EnvironmentManager
+
+https://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_spring_cloud_config_server
+
+@EnableConfigServer
+
       // Bean 动态
       // 应用上下文
       // Boot Actuator
